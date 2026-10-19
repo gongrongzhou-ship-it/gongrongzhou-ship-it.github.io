@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rongzhou (Paul) Gong | Business Analytics Portfolio</title>
+  <meta name="description" content="Portfolio of Rongzhou (Paul) Gong, MS in Business Analytics candidate at Brandeis University: projects, experience, resume, and contact information.">
+  <meta property="og:title" content="Rongzhou (Paul) Gong | Business Analytics Portfolio">
+  <meta property="og:description" content="MS in Business Analytics candidate at Brandeis University with an accounting background. Two business apps in daily use, Python sales analysis, and financial modeling.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="photo.jpg">
+  <style>
+    :root {
+      --ink: #17202b;
+      --muted: #566170;
+      --accent: #1f4e79;
+      --accent-dark: #163a5b;
+      --accent-soft: #eaf1f8;
+      --accent-line: #c9d8e8;
+      --bg: #fbfbf9;
+      --band: #f1f5f9;
+      --card: #ffffff;
+      --line: #e4e2db;
+      --ok: #2e7d4f;
+      --radius: 14px;
+      --shadow: 0 1px 2px rgba(23, 32, 43, 0.04), 0 8px 24px rgba(23, 32, 43, 0.06);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-size: 17px;
+      line-height: 1.65;
+    }
+    a { color: var(--accent); }
+    a:hover { color: var(--accent-dark); }
+    :focus-visible { outline: 3px solid #f0b429; outline-offset: 3px; border-radius: 4px; }
+    .skip { position: absolute; left: -999px; top: 8px; background: var(--card); padding: 8px 12px; z-index: 20; }
+    .skip:focus { left: 8px; }
+    .wrap { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+
+    /* Navigation */
+    header.top {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(251, 251, 249, 0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
+    }
+    header.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 62px; flex-wrap: wrap; }
+    .brand { font-weight: 700; color: var(--ink); text-decoration: none; }
+    .brand span { color: var(--accent); }
+    nav ul { list-style: none; display: flex; gap: 22px; margin: 0; padding: 0; flex-wrap: wrap; }
+    nav a { color: var(--muted); text-decoration: none; font-size: 15px; font-weight: 500; }
+    nav a:hover { color: var(--accent); }
+
+    /* Hero */
+    .hero {
+      background:
+        radial-gradient(900px 320px at 85% -10%, rgba(31, 78, 121, 0.10), transparent 70%),
+        linear-gradient(180deg, #eef3f8 0%, var(--bg) 100%);
+      border-bottom: 1px solid var(--line);
+      padding: 64px 0 88px;
+    }
+    .hero .wrap { display: grid; grid-template-columns: 230px 1fr; gap: 48px; align-items: center; }
+    .portrait {
+      margin: 0; width: 230px; height: 230px; border-radius: 50%; overflow: hidden;
+      border: 6px solid var(--card);
+      box-shadow: 0 0 0 1px var(--accent-line), 0 14px 34px rgba(23, 32, 43, 0.16);
+      background: var(--accent-soft);
+    }
+    .portrait img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .badge {
+      display: inline-flex; align-items: center; gap: 8px; margin: 0 0 14px;
+      padding: 5px 12px; border-radius: 999px; background: var(--card); border: 1px solid var(--line);
+      font-size: 14px; font-weight: 600; color: var(--ink);
+    }
+    .badge .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--ok); box-shadow: 0 0 0 3px rgba(46, 125, 79, 0.15); }
+    h1 { margin: 0 0 6px; font-size: 46px; line-height: 1.12; letter-spacing: -0.5px; }
+    .role { margin: 0 0 6px; font-size: 20px; color: var(--accent); font-weight: 600; }
+    .tagline { margin: 0 0 22px; color: var(--muted); font-size: 16px; }
+    .buttons { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 6px; padding: 10px 18px; border-radius: 999px;
+      font-weight: 600; font-size: 15px; text-decoration: none; border: 2px solid var(--accent);
+      transition: background-color 0.15s ease, color 0.15s ease;
+    }
+    .btn.primary { background: var(--accent); color: #fff; }
+    .btn.primary:hover { background: var(--accent-dark); border-color: var(--accent-dark); color: #fff; }
+    .btn.ghost { color: var(--accent); background: var(--card); }
+    .btn.ghost:hover { background: var(--accent-soft); }
+
+    /* Highlights */
+    .stats { margin-top: -48px; position: relative; }
+    .stats ul {
+      list-style: none; margin: 0; padding: 0;
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow);
+    }
+    .stats li { padding: 20px 22px; }
+    .stats li + li { border-left: 1px solid var(--line); }
+    .stats strong { display: block; font-size: 30px; line-height: 1.1; color: var(--accent); letter-spacing: -0.5px; }
+    .stats span { display: block; margin-top: 6px; font-size: 14px; color: var(--muted); line-height: 1.45; }
+
+    /* Sections */
+    section.block { padding: 56px 0 8px; }
+    .kicker { margin: 0 0 4px; color: var(--accent); font-size: 13px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; }
+    h2 { font-size: 30px; line-height: 1.2; margin: 0 0 14px; letter-spacing: -0.3px; }
+    .section-lead { margin: 0 0 26px; color: var(--muted); max-width: 760px; }
+    .about-grid { display: grid; grid-template-columns: 1fr 280px; gap: 28px; align-items: start; }
+    .about-grid p { margin: 0; font-size: 18px; }
+    .facts { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px 20px; margin: 0; box-shadow: var(--shadow); }
+    .facts div + div { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--line); }
+    .facts dt { font-size: 13px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.6px; }
+    .facts dd { margin: 2px 0 0; font-weight: 600; font-size: 15px; }
+
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); }
+
+    /* Projects */
+    .projects { display: grid; gap: 24px; }
+    .project { padding: 26px 28px; border-top: 4px solid var(--accent); }
+    .project h3 { margin: 0; font-size: 22px; }
+    .project .meta { margin: 2px 0 14px; color: var(--muted); font-size: 15px; }
+    .project .need { margin: 0 0 18px; padding: 12px 16px; background: var(--band); border-radius: 10px; font-size: 16px; }
+    .project .need b { color: var(--accent-dark); }
+    .focus { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .focus h4 { margin: 0 0 6px; font-size: 15px; display: flex; align-items: center; gap: 8px; }
+    .focus h4 .num {
+      display: inline-grid; place-items: center; width: 24px; height: 24px; border-radius: 50%;
+      background: var(--accent-soft); color: var(--accent); font-size: 13px; font-weight: 700;
+    }
+    .focus p { margin: 0; font-size: 15px; color: #2b3540; }
+    .flow { list-style: none; margin: 20px 0 0; padding: 0; display: flex; flex-wrap: wrap; align-items: stretch; gap: 8px; }
+    .flow li {
+      flex: 1 1 0; min-width: 130px; padding: 10px 12px; text-align: center; font-size: 14px; font-weight: 600;
+      color: var(--accent-dark); background: var(--accent-soft); border: 1px solid var(--accent-line); border-radius: 10px;
+      position: relative;
+    }
+    .flow li + li::before {
+      content: "\2192"; position: absolute; left: -9px; top: 50%; transform: translate(-50%, -50%);
+      color: var(--muted); font-weight: 400;
+    }
+    .built { margin: 16px 0 0; font-size: 14px; color: var(--muted); }
+    .built b { color: var(--ink); font-weight: 600; }
+
+    /* Experience timeline */
+    .timeline { list-style: none; margin: 0; padding: 0; position: relative; }
+    .timeline::before { content: ""; position: absolute; left: 7px; top: 8px; bottom: 8px; width: 2px; background: var(--accent-line); }
+    .timeline > li { position: relative; padding-left: 36px; }
+    .timeline > li + li { margin-top: 20px; }
+    .timeline > li::before {
+      content: ""; position: absolute; left: 0; top: 24px; width: 16px; height: 16px; border-radius: 50%;
+      background: var(--card); border: 3px solid var(--accent);
+    }
+    .job { padding: 20px 24px; }
+    .job-head { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: baseline; }
+    .job h3 { margin: 0; font-size: 18px; }
+    .job .when { color: var(--muted); font-size: 14px; white-space: nowrap; }
+    .job .where { margin: 0 0 10px; color: var(--muted); font-size: 15px; }
+    .job ul { margin: 0; padding-left: 20px; }
+    .job li + li { margin-top: 4px; }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 0; padding: 0; list-style: none; }
+    .chips li { background: var(--accent-soft); color: var(--accent-dark); font-size: 13px; font-weight: 600; padding: 3px 10px; border-radius: 999px; }
+
+    /* Education and skills */
+    .two { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .edu { padding: 20px 24px; }
+    .edu h3 { margin: 0; font-size: 18px; }
+    .edu .where { margin: 2px 0 10px; color: var(--muted); font-size: 15px; }
+    .edu p { margin: 0; }
+    .edu p + p { margin-top: 6px; }
+    .label { font-weight: 600; }
+    .skills-group + .skills-group { margin-top: 14px; }
+    .skills-group h4 { margin: 0; font-size: 14px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.6px; }
+
+    /* Resume */
+    .resume-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 20px; }
+    .resume-box {
+      display: block; max-width: 760px; margin: 0 auto;
+      background: var(--card); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; box-shadow: var(--shadow);
+    }
+    .resume-box img { display: block; width: 100%; height: auto; }
+    .resume-box:hover { box-shadow: 0 10px 30px rgba(31, 78, 121, 0.20); }
+
+    /* Contact */
+    .contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .contact-item { padding: 18px 20px; display: block; text-decoration: none; color: var(--ink); }
+    a.contact-item:hover { border-color: var(--accent-line); background: #fdfeff; }
+    .contact-item .label { display: block; font-size: 13px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.6px; }
+    .contact-item .value { display: block; margin-top: 2px; font-weight: 600; color: var(--accent); overflow-wrap: anywhere; }
+    .contact-item .value.plain { color: var(--ink); }
+
+    footer { border-top: 1px solid var(--line); margin-top: 64px; padding: 24px 0 40px; color: var(--muted); font-size: 14px; }
+
+    @media (max-width: 860px) {
+      .stats ul { grid-template-columns: repeat(2, 1fr); }
+      .stats li:nth-child(3) { border-left: 0; }
+      .stats li:nth-child(n+3) { border-top: 1px solid var(--line); }
+      .about-grid { grid-template-columns: 1fr; }
+      .focus { grid-template-columns: 1fr; gap: 14px; }
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 720px) {
+      body { font-size: 16px; }
+      header.top { position: static; }
+      header.top .wrap { padding-top: 8px; padding-bottom: 8px; }
+      nav ul { gap: 4px 14px; }
+      .wrap { padding: 0 16px; }
+      .hero { padding: 36px 0 76px; }
+      .hero .wrap { grid-template-columns: 1fr; justify-items: center; text-align: center; gap: 22px; }
+      .portrait { width: 170px; height: 170px; }
+      h1 { font-size: 34px; }
+      .role { font-size: 18px; }
+      .buttons { justify-content: center; }
+      .stats strong { font-size: 26px; }
+      .stats li { padding: 16px; }
+      h2 { font-size: 26px; }
+      .about-grid p { font-size: 17px; }
+      .project { padding: 22px 18px; }
+      .flow { flex-direction: column; }
+      .flow li { min-width: 0; }
+      .flow li + li { margin-top: 14px; }
+      .flow li + li::before { content: "\2193"; left: 50%; top: -12px; transform: translate(-50%, -50%); }
+      .two { grid-template-columns: 1fr; }
+      .job-head { flex-direction: column; gap: 0; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn { transition: none; } }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#about">Skip to content</a>
+
+  <header class="top">
+    <div class="wrap">
+      <a class="brand" href="#top">Rongzhou <span>(Paul)</span> Gong</a>
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#resume">Resume</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap">
+        <figure class="portrait">
+          <img src="photo.jpg" width="640" height="640" alt="Photo of Rongzhou (Paul) Gong, smiling">
+        </figure>
+        <div>
+          <p class="badge"><span class="dot" aria-hidden="true"></span>Open to analytics internships for 2027</p>
+          <h1>Rongzhou (Paul) Gong</h1>
+          <p class="role">MS in Business Analytics candidate · Brandeis University</p>
+          <p class="tagline">Accounting background · Python · SQL · Excel · Financial modeling · Waltham, MA</p>
+          <div class="buttons">
+            <a class="btn primary" href="#projects">See my projects</a>
+            <a class="btn ghost" href="#resume">Resume</a>
+            <a class="btn ghost" href="https://www.linkedin.com/in/rongzhou-gong" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="stats">
+      <div class="wrap">
+        <ul aria-label="Highlights">
+          <li><strong>2</strong><span>business apps now used by a clothing manufacturer</span></li>
+          <li><strong>680+</strong><span>automated test cases across those two apps</span></li>
+          <li><strong>15%</strong><span>fewer stockouts and excess inventory at Swanlux</span></li>
+          <li><strong>99.5%</strong><span>data accuracy in financial records as an accounting intern</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <section class="block" id="about">
+      <div class="wrap">
+        <p class="kicker">About me</p>
+        <h2>Hi, I'm Paul</h2>
+        <div class="about-grid">
+          <p>I am an MS in Business Analytics candidate at Brandeis University, and I will graduate in December 2027. Before Brandeis, I studied accounting at Western University in Canada. During college, I also started and ran my own online clothing brand, Swanlux. I used Python to clean our Shopify sales data and plan inventory, and this cut stockouts and extra inventory by 15%. That experience showed me how much good data can improve everyday business decisions, and it is the main reason I chose analytics. This past summer, I worked as an equity research intern and built a DCF model for Baker Hughes, which taught me to connect numbers to a clear recommendation. I have also used AI coding tools to build two business apps for a clothing manufacturer, where I focused on matching real needs and on testing. I am now building my skills in Python, SQL, and data visualization, and I am looking for analytics internships for spring or summer 2027.</p>
+          <dl class="facts">
+            <div><dt>Studying</dt><dd>MS in Business Analytics, Brandeis University</dd></div>
+            <div><dt>Graduating</dt><dd>December 2027</dd></div>
+            <div><dt>Background</dt><dd>Accounting (BMOS), Western University</dd></div>
+            <div><dt>Looking for</dt><dd>Analytics internships, spring or summer 2027</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="projects">
+      <div class="wrap">
+        <p class="kicker">Projects</p>
+        <h2>Two business apps for a clothing manufacturer</h2>
+        <p class="section-lead">At Qingdao Hengrunda Clothing Co., the factory and the office worked through WeChat messages, phone calls, and separate Excel files. I turned two of these processes into desktop apps that the company now uses. AI coding tools did most of the programming. My work was to understand what the staff needed, test the apps carefully, and get them into daily use.</p>
+
+        <div class="projects">
+          <article class="card project">
+            <h3>Fabric Progress Tracker</h3>
+            <p class="meta">Desktop app for the production team · Windows and Mac</p>
+            <p class="need"><b>The need:</b> each fabric order was followed through chats and calls, so it was hard to see which orders were running late.</p>
+            <div class="focus">
+              <div>
+                <h4><span class="num">1</span>Matching the need</h4>
+                <p>The app follows the factory's real steps: buying yarn, dyeing yarn, weaving, dyeing, printing, finishing, and repairs. Each step has a standard number of days with warning and alarm dates. Managers and employees get separate versions, because managers approve changes and employees enter updates.</p>
+              </div>
+              <div>
+                <h4><span class="num">2</span>Testing</h4>
+                <p>570+ automated test cases check the step rules, dates, permissions, sync conflicts, updates, and backups. I restored real employee backups to make sure no records were lost, and I tracked every issue by priority until it was fixed and tested again.</p>
+              </div>
+              <div>
+                <h4><span class="num">3</span>In daily use</h4>
+                <p>Installed on company computers: Windows for managers and employees, and Mac for managers. Updates install from inside the app, and data can be backed up and restored.</p>
+              </div>
+            </div>
+            <ol class="flow" aria-label="How an update moves through the app">
+              <li>Staff update a step</li>
+              <li>Saved on the computer</li>
+              <li>Synced to the cloud</li>
+              <li>Seen on other devices</li>
+            </ol>
+            <p class="built"><b>Built with AI coding tools</b> · Flutter · SQLite · Tencent CloudBase</p>
+          </article>
+
+          <article class="card project">
+            <h3>Cost Management System</h3>
+            <p class="meta">Desktop app for the manager and finance team · Windows and Mac</p>
+            <p class="need"><b>The need:</b> each department sent its own Excel file, and costs and income had to be put together by hand.</p>
+            <div class="focus">
+              <div>
+                <h4><span class="num">1</span>Matching the need</h4>
+                <p>I started from the manager's handwritten cost sheet and confirmed every line: 13 cost items, 2 income items, and the formulas for total cost, total income, and surplus. Two Excel templates match how work is split between the fabric team and the Japanese business team. The finance manager adds shipping, payments, and tax refunds in the app.</p>
+              </div>
+              <div>
+                <h4><span class="num">2</span>Testing</h4>
+                <p>100+ automated test cases, plus test files with known answers. For example, three files must give income of 10,500, cost of 5,500, and a surplus of 5,000. I also tested tricky cases: duplicate files, subtotal rows, two spellings of one customer, and month conflicts. All tests used a separate test ledger, never the company's real data.</p>
+              </div>
+              <div>
+                <h4><span class="num">3</span>In daily use</h4>
+                <p>Version 0.8 runs on Windows and Mac. It exports Excel reports with monthly, quarterly, and yearly views. The original Excel files stay on the computer, and only the results sync between devices.</p>
+              </div>
+            </div>
+            <ol class="flow" aria-label="How the cost report is built">
+              <li>Department Excel files</li>
+              <li>Check and map columns</li>
+              <li>Pair by customer and product number</li>
+              <li>Cost, income, and surplus report</li>
+            </ol>
+            <p class="built"><b>Built with AI coding tools</b> · React · Electron · Node.js · SQLite</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="experience">
+      <div class="wrap">
+        <p class="kicker">Experience</p>
+        <h2>Where I have worked</h2>
+        <ol class="timeline">
+          <li>
+            <article class="card job">
+              <div class="job-head"><h3>Equity Research Analyst Intern, Basalt Wealth Inc</h3><span class="when">May 2026 – July 2026</span></div>
+              <p class="where">New York, NY (Remote)</p>
+              <ul>
+                <li>Researched Baker Hughes: financial statements, business segments, industry trends, and economic drivers.</li>
+                <li>Built a DCF valuation model with revenue forecasts, margins, unlevered free cash flow, WACC, terminal value, and sensitivity analysis.</li>
+                <li>Wrote an equity research report on the investment thesis, valuation, catalysts, and risks, and reviewed the impact of the Chart Industries acquisition.</li>
+              </ul>
+              <ul class="chips" aria-label="Skills used"><li>Financial modeling</li><li>DCF valuation</li><li>Excel</li><li>Research writing</li></ul>
+            </article>
+          </li>
+          <li>
+            <article class="card job">
+              <div class="job-head"><h3>Owner, Swanlux (online clothing brand)</h3><span class="when">April 2024 – April 2026</span></div>
+              <p class="where">London, ON, Canada</p>
+              <ul>
+                <li>Started and ran an e-commerce clothing brand on my own, from sourcing and inventory planning to order delivery.</li>
+                <li>Used Python (Pandas, NumPy) to clean and analyze monthly Shopify sales data and to automate inventory forecasting.</li>
+                <li>Used the sales data to guide purchasing, which reduced stockouts and excess inventory by 15%.</li>
+                <li>Made CAD 7,500 in revenue in the first six months, and cut landed costs by 8% by working with overseas suppliers.</li>
+              </ul>
+              <ul class="chips" aria-label="Skills used"><li>Python</li><li>Pandas</li><li>NumPy</li><li>Sales analysis</li><li>Inventory forecasting</li></ul>
+            </article>
+          </li>
+          <li>
+            <article class="card job">
+              <div class="job-head"><h3>Accounting Intern, Qingdao Hengrunda Clothing Co.</h3><span class="when">April 2023 – August 2023</span></div>
+              <p class="where">Qingdao, China</p>
+              <ul>
+                <li>Reconciled financial records and helped prepare financial statements with 99.5% data accuracy.</li>
+                <li>Combined procurement and sales data in Excel to track cash movements for supply chain finance analysis.</li>
+              </ul>
+              <ul class="chips" aria-label="Skills used"><li>Accounting</li><li>Excel</li><li>Data reconciliation</li></ul>
+            </article>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="block" id="education">
+      <div class="wrap">
+        <p class="kicker">Education &amp; skills</p>
+        <h2>What I am learning</h2>
+        <div class="two">
+          <div class="card edu">
+            <h3>Brandeis University</h3>
+            <p class="where">Waltham, MA · August 2026 – December 2027 (expected)</p>
+            <p>MS in Business Analytics (STEM-designated), Brandeis School of Business and Economics</p>
+            <p><span class="label">Coursework:</span> Foundations of Data Analytics; Information Visualization; Python and Its Application to Business Analytics; Intro to Probability and Statistics for Business and Economics</p>
+          </div>
+          <div class="card edu">
+            <h3>Western University</h3>
+            <p class="where">London, ON, Canada · September 2022 – April 2026</p>
+            <p>Bachelor of Management and Organizational Studies, Specialization in Accounting</p>
+          </div>
+          <div class="card edu">
+            <div class="skills-group">
+              <h4>Analytics</h4>
+              <ul class="chips"><li>Excel (data analysis, complex formulas)</li><li>Python (Pandas, NumPy)</li><li>SQL (basic queries)</li></ul>
+            </div>
+            <div class="skills-group">
+              <h4>Business</h4>
+              <ul class="chips"><li>Financial modeling</li><li>Budgeting</li><li>Cost control</li><li>Supply chain management</li><li>E-commerce operations</li></ul>
+            </div>
+          </div>
+          <div class="card edu">
+            <div class="skills-group">
+              <h4>Languages</h4>
+              <ul class="chips"><li>Mandarin Chinese (native)</li><li>English</li></ul>
+            </div>
+            <div class="skills-group">
+              <h4>Volunteer</h4>
+              <p>COVID-19 community volunteer (2020–2021): materials distribution, elderly services, and information registration.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="resume">
+      <div class="wrap">
+        <p class="kicker">Resume</p>
+        <h2>My resume</h2>
+        <div class="resume-actions">
+          <a class="btn primary" href="rongzhou-gong-resume.pdf" download>Download resume (PDF)</a>
+          <a class="btn ghost" href="rongzhou-gong-resume.pdf" target="_blank" rel="noopener">Open in a new tab</a>
+        </div>
+        <a class="resume-box" href="rongzhou-gong-resume.pdf" target="_blank" rel="noopener">
+          <img src="resume-preview.png" width="1275" height="1650" loading="lazy"
+               alt="Preview of the one-page resume of Rongzhou (Paul) Gong. Click to open the PDF.">
+        </a>
+      </div>
+    </section>
+
+    <section class="block" id="contact">
+      <div class="wrap">
+        <p class="kicker">Contact</p>
+        <h2>Let's connect</h2>
+        <p class="section-lead">I am happy to talk about analytics roles, projects, or my experience. Email or LinkedIn is the best way to reach me.</p>
+        <div class="contact-grid">
+          <a class="card contact-item" href="mailto:gongrongzhou@gmail.com"><span class="label">Email</span><span class="value">gongrongzhou@gmail.com</span></a>
+          <a class="card contact-item" href="https://www.linkedin.com/in/rongzhou-gong" target="_blank" rel="noopener"><span class="label">LinkedIn</span><span class="value">linkedin.com/in/rongzhou-gong</span></a>
+          <div class="card contact-item"><span class="label">Location</span><span class="value plain">Waltham, MA</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">© 2026 Rongzhou (Paul) Gong · Last updated October 2026</div>
+  </footer>
+</body>
+</html>
