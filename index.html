@@ -142,6 +142,13 @@
       content: "\2192"; position: absolute; left: -9px; top: 50%; transform: translate(-50%, -50%);
       color: var(--muted); font-weight: 400;
     }
+    .results { list-style: none; margin: 20px 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+    .results li { padding: 12px 14px; border: 1px solid var(--accent-line); border-radius: 10px; background: var(--accent-soft); }
+    .results strong { display: block; font-size: 22px; line-height: 1.15; color: var(--accent-dark); }
+    .results span { display: block; margin-top: 2px; font-size: 13px; color: var(--muted); }
+    .group-lead { margin: 18px 0 -4px; }
+    .group-lead h3 { margin: 0 0 6px; font-size: 20px; }
+    .group-lead p { margin: 0; color: var(--muted); max-width: 820px; }
     .built { margin: 16px 0 0; font-size: 14px; color: var(--muted); }
     .built b { color: var(--ink); font-weight: 600; }
 
@@ -219,6 +226,7 @@
       h2 { font-size: 26px; }
       .about-grid p { font-size: 17px; }
       .project { padding: 22px 18px; }
+      .results { grid-template-columns: repeat(2, 1fr); }
       .flow { flex-direction: column; }
       .flow li { min-width: 0; }
       .flow li + li { margin-top: 14px; }
@@ -298,10 +306,42 @@
     <section class="block" id="projects">
       <div class="wrap">
         <p class="kicker">Projects</p>
-        <h2>Two business apps for a clothing manufacturer</h2>
-        <p class="section-lead">At Qingdao Hengrunda Clothing Co., the factory and the office worked through WeChat messages, phone calls, and separate Excel files. I turned two of these processes into desktop apps that the company now uses. AI coding tools did most of the programming. My work was to understand what the staff needed, test the apps carefully, and get them into daily use.</p>
+        <h2>Research, analysis, and business apps</h2>
+        <p class="section-lead">A stock valuation project from my equity research internship, and two business apps I built for a clothing manufacturer.</p>
 
         <div class="projects">
+          <article class="card project">
+            <h3>Baker Hughes (NYSE: BKR): Equity Research and DCF Valuation</h3>
+            <p class="meta">Equity research internship, Basalt Wealth Inc · May – July 2026 · Final report: July 19, 2026</p>
+            <p class="need"><b>The question:</b> is Baker Hughes stock worth buying at its July 17, 2026 price of $55.95?</p>
+            <div class="focus">
+              <div>
+                <h4><span class="num">1</span>Research</h4>
+                <p>I read Baker Hughes' annual reports from 2021 to 2025 and compared its two segments: oilfield services (OFSE) and industrial and energy technology (IET). I also studied industry trends, economic drivers, and the Chart Industries deal: $210 per share in cash, about $13.6 billion, with $325 million in expected cost savings.</p>
+              </div>
+              <div>
+                <h4><span class="num">2</span>Data analysis and DCF</h4>
+                <p>I built horizontal and vertical analyses of the income statement, balance sheet, and cash flow statement. Then I built a DCF model: revenue starts from company guidance ($27.25 billion for 2026), the adjusted EBITDA margin rises toward 19.7% by 2030, and cash flows are discounted at an 8.3% WACC with 2.75% terminal growth.</p>
+              </div>
+              <div>
+                <h4><span class="num">3</span>Stock call</h4>
+                <p>The model gave about $62 per share, about 10% above the market price. A Buy needed 15–20% upside, so the recommendation was Hold / Neutral with a positive bias. I left the Chart deal out of the base case and treated it as extra upside, with debt and integration risk.</p>
+              </div>
+            </div>
+            <ul class="results" aria-label="Valuation results">
+              <li><strong>$55.95</strong><span>share price, July 17, 2026</span></li>
+              <li><strong>$61.69</strong><span>DCF value per share</span></li>
+              <li><strong>≈10%</strong><span>upside</span></li>
+              <li><strong>Hold</strong><span>with a positive bias</span></li>
+            </ul>
+            <p class="built"><b>Tools</b> · Excel · Financial statement analysis · DCF model · Research report and presentation</p>
+          </article>
+
+          <div class="group-lead">
+            <h3>Business apps for Qingdao Hengrunda Clothing Co.</h3>
+            <p>The factory and the office worked through WeChat messages, phone calls, and separate Excel files. I turned two of these processes into desktop apps that the company now uses. AI coding tools did most of the programming. My work was to understand what the staff needed, test the apps carefully, and get them into daily use.</p>
+          </div>
+
           <article class="card project">
             <h3>Fabric Progress Tracker</h3>
             <p class="meta">Desktop app for the production team · Windows and Mac</p>
